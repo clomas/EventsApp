@@ -37,11 +37,6 @@ final class EventListCoordinator: Coordinator {
             childCoordinators.remove(at: index)
         }
     }
-
-    func test() {
-        var test = String()
-        //test
-    }
 }
 
 
