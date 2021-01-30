@@ -1,13 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Event Detail View Controller-->
+        <scene sceneID="K5i-hN-8b5">
+            <objects>
+                <viewController storyboardIdentifier="EventDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0BR-Yx-J2i" customClass="EventDetailViewController" customModule="EventsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kif-xO-Lvv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0MQ-xQ-Vdz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView verifyAmbiguity="ignoreSizes" opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="200" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fa6-n4-Eud" customClass="TimeRemainingStackView" customModule="EventsApp" customModuleProvider="target">
+                                <rect key="frame" x="57" y="248" width="300" height="400"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oM2-fq-v2j"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="0MQ-xQ-Vdz" secondAttribute="bottom" id="AKs-jx-kPe"/>
+                            <constraint firstItem="0MQ-xQ-Vdz" firstAttribute="leading" secondItem="Kif-xO-Lvv" secondAttribute="leading" id="LR9-5e-Esw"/>
+                            <constraint firstItem="0MQ-xQ-Vdz" firstAttribute="top" secondItem="Kif-xO-Lvv" secondAttribute="top" id="g0W-LR-fqO"/>
+                            <constraint firstItem="fa6-n4-Eud" firstAttribute="centerY" secondItem="Kif-xO-Lvv" secondAttribute="centerY" id="pzK-Bb-cYd"/>
+                            <constraint firstItem="fa6-n4-Eud" firstAttribute="centerX" secondItem="Kif-xO-Lvv" secondAttribute="centerX" id="xz2-SZ-sCB"/>
+                            <constraint firstItem="0MQ-xQ-Vdz" firstAttribute="trailing" secondItem="Kif-xO-Lvv" secondAttribute="trailing" id="ySG-qT-HCx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="0MQ-xQ-Vdz" id="81e-fK-seA"/>
+                        <outlet property="timeRemainingStackView" destination="fa6-n4-Eud" id="QCy-Qu-Tee"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SmR-Or-CUk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1656.521739130435" y="137.94642857142856"/>
+        </scene>
+        <!--Edit Event View Controller-->
+        <scene sceneID="lLP-pX-bMT">
+            <objects>
+                <viewController storyboardIdentifier="EditEventViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VgX-Z6-MJg" customClass="EditEventViewController" customModule="EventsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dEE-Iz-fae">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YaC-96-SX5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wPh-bt-WnW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wPh-bt-WnW" firstAttribute="bottom" secondItem="YaC-96-SX5" secondAttribute="bottom" id="65V-bA-TZm"/>
+                            <constraint firstItem="YaC-96-SX5" firstAttribute="leading" secondItem="wPh-bt-WnW" secondAttribute="leading" id="DQX-v2-oTz"/>
+                            <constraint firstItem="YaC-96-SX5" firstAttribute="top" secondItem="wPh-bt-WnW" secondAttribute="top" id="N6Z-Yd-Pto"/>
+                            <constraint firstItem="wPh-bt-WnW" firstAttribute="trailing" secondItem="YaC-96-SX5" secondAttribute="trailing" id="jGo-qY-bT3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="YaC-96-SX5" id="0kv-eP-Cuz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KRx-4I-t8l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2541" y="138"/>
+        </scene>
         <!--Event List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -15,13 +80,28 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zdc-BX-j2P">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Zdc-BX-j2P" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7b1-oQ-d9f"/>
+                            <constraint firstAttribute="bottom" secondItem="Zdc-BX-j2P" secondAttribute="bottom" id="AJe-4U-W9e"/>
+                            <constraint firstItem="Zdc-BX-j2P" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BZ9-tK-sZY"/>
+                            <constraint firstItem="Zdc-BX-j2P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MnJ-Fk-FWl"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Zdc-BX-j2P" id="pCE-ny-21D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="138"/>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
         <!--Add Event View Controller-->
         <scene sceneID="k9W-Nn-9Rg">
@@ -51,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uwv-G6-t5r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946" y="138"/>
+            <point key="canvasLocation" x="906" y="138"/>
         </scene>
     </scenes>
     <resources>
