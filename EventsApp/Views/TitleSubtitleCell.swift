@@ -60,7 +60,7 @@ final class TitleSubtitleCell: UITableViewCell {
         titleLabel.text = viewModel.title
         subtitleTextField.text = viewModel.subtitle
         subtitleTextField.placeholder = viewModel.placeholder
-        // if this is not date nil otherwide show datpicker
+        // if this is not date nil otherwise show datpicker
         subtitleTextField.inputView = viewModel.type == .text ? nil : datePickerView
         subtitleTextField.inputAccessoryView = viewModel.type == .text ? nil : toolbar
 
