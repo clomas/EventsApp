@@ -15,6 +15,7 @@ final class TimeRemainingStackView: UIStackView {
             addArrangedSubview($0)
         }
         axis = .vertical
+        // fixes my layout problem
         translatesAutoresizingMaskIntoConstraints = false
     }
 
